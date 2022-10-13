@@ -41,9 +41,9 @@ eggs =
 
 ### 3. Start "buildout" and for Volto additionally "yarn install"
 
-## Integration of  the recommendations
+## How to enable the recommendations
 
-### 1. Add Recommendations behavior
+### 1. Add recommendationsecommendations behavior
 #### Add recommendations behavior (as seen below) to a contenttype of your choice via management-interface > portal_types.
 ```
 interaktiv.recommendations.behaviors.recommendable.IRecommendableBehavior
