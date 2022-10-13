@@ -34,7 +34,6 @@ eggs =
 #### File: package.json
 ```json
   "addons": [
-    ...
     "@interaktiv/volto-recommendations"
   ]
 ```
@@ -43,7 +42,7 @@ eggs =
 
 ## How to enable the recommendations
 
-### 1. Add recommendationsecommendations behavior
+### 1. Add recommendations behavior
 #### Add recommendations behavior (as seen below) to a contenttype of your choice via management-interface > portal_types.
 ```
 interaktiv.recommendations.behaviors.recommendable.IRecommendableBehavior
