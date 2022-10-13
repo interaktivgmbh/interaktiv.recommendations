@@ -50,6 +50,9 @@ h1, h2, h3 {
   border-left: 32px solid green;  
 }
 
-.output_area .prompt {
+.output_area .prompt,
+.slide-number-delimiter,
+.slide-number-b,
+#help_b {
   display: none;
 }
