@@ -1,0 +1,17 @@
+<configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="interaktiv.recommendations">
+
+    <include package="plone.behavior" file="meta.zcml"/>
+
+    <plone:behavior
+            title="Recommendable Behavior"
+            description="Adds Recommendable Behavior"
+            for="plone.dexterity.interfaces.IDexterityContent"
+            factory="interaktiv.recommendations.behaviors.recommendable.RecommendableBehavior"
+            provides="interaktiv.recommendations.behaviors.recommendable.IRecommendableBehavior"
+            marker="interaktiv.recommendations.behaviors.recommendable.IRecommendableBehavior"
+    />
+
+</configure>

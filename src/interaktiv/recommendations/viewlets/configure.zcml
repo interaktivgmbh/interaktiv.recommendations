@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="interaktiv.recommendations">
+
+    <!-- Viewlet: Recommendations -->
+    <browser:viewlet
+        for="plone.app.contenttypes.interfaces.IDocument"
+        name="interaktiv.recommendations"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class="interaktiv.recommendations.viewlets.recommendations.RecommendationsViewlet"
+        permission="zope2.View"
+        layer="interaktiv.recommendations.interfaces.IInteraktivRecommendationsLayer"
+    />
+
+</configure>

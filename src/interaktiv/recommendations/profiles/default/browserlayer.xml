@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layers>
+  <layer name="interaktiv.recommendations" interface="interaktiv.recommendations.interfaces.IInteraktivRecommendationsLayer" />
+</layers>

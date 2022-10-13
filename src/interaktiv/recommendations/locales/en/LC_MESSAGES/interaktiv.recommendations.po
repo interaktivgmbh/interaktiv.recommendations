@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-11-12 10:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: interaktiv.recommendations\n"
+
+###########################
+# Controlpanel
+###########################
+
+msgid "trans_recommendations_settings"
+msgstr "Recommendations Settings"
+
+msgid "trans_recommendations_settings_desc"
+msgstr "Settings to configure Recommendations"
+
+msgid "trans_recommendations_data"
+msgstr "Recommendations Data"
+
+msgid "trans_recommendations_data_desc"
+msgstr "Details to indexed content"
+
+msgid "trans_recommendations_refresh"
+msgstr "Refresh Recommendations"
+
+msgid "trans_recommendations_refresh_desc"
+msgstr "Button to reindex content and update Recommendations"
+
+msgid "trans_recommendations_refresh_button"
+msgstr "Refresh"
+
+msgid "trans_recommendations_import"
+msgstr "IMPORT 20newsgroups-Dataset"
+
+msgid "trans_recommendations_import_desc"
+msgstr "Button to import dataset for testing purpose"
+
+msgid "trans_recommendation_max_elements"
+msgstr "Number of Elements"
+
+msgid "trans_recommendations_max_elements_desc"
+msgstr "Number of Recommendations displayed in the viewlet"
+
+msgid "trans_recommendations_debug_mode"
+msgstr "Debug Mode"
+
+msgid "trans_recommendations_debug_mode_desc"
+msgstr "Activate the debug mode to show more details in the recommendations viewlet and tile"
+
+msgid "trans_save"
+msgstr "Save"
+
+msgid "trans_abort"
+msgstr "Abort"
+
+###########################
+# Viewlet
+###########################
+
+msgid "label_title"
+msgstr "That could also be interesting:"

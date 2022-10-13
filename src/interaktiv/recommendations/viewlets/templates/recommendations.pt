@@ -1,0 +1,16 @@
+<div i18n:domain="interaktiv.recommendations">
+  <b i18n:translate="label_title">That could also be interesting:</b>
+  <br><br>
+  <ul>
+    <tal:recommendations repeat="recommendation python:view.get_recommendations()">
+      <li>
+        <a href="${python: recommendation['url']}">
+            ${python: recommendation['title']}
+              <tal:debug tal:condition="python: view.debug_mode()">
+                (index=${python: recommendation['index']} , distance=${python: recommendation['distance']})
+              </tal:debug>
+        </a>
+      </li>
+    </tal:recommendations>
+  </ul>
+</div>

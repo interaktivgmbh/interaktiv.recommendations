@@ -1,0 +1,18 @@
+
+* [ok] independent of interaktiv products
+* [ok] persistent model saving
+* performance measure -> model info / use this knn for classification -> score?
+* nicer code
+* testing
+* optimisations -> dimension reduction
+* error handling
+* documentation
+* translations
+* deinstallation (e.g. remove catalog index)
+* add notebooks
+* performance measuring
+
+...
+https://scikit-learn.org/stable/modules/neighbors.html#dimensionality-reduction
+https://course.spacy.io/en/chapter1
+https://explosion.ai/demos/matcher

@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-11-12 10:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: interaktiv.recommendations\n"
+
+###########################
+# Controlpanel
+###########################
+
+msgid "trans_recommendations_settings"
+msgstr "Empfehlungen Einstellungen"
+
+msgid "trans_recommendations_settings_desc"
+msgstr "Einstellungen zur Anpassung der Empfehlungen"
+
+msgid "trans_recommendations_data"
+msgstr "Empfehlungsdaten"
+
+msgid "trans_recommendations_data_desc"
+msgstr "Details zu indexierten Inhalten"
+
+msgid "trans_recommendations_refresh"
+msgstr "Empfehlungen aktualisieren"
+
+msgid "trans_recommendations_refresh_desc"
+msgstr "Schaltfläche zur Indexierung von Inhalten und Erneuerung der Empfehlungen"
+
+msgid "trans_recommendations_refresh_button"
+msgstr "Aktualisieren"
+
+msgid "trans_recommendations_import"
+msgstr "20newsgroups Datensatz importieren"
+
+msgid "trans_recommendations_import_desc"
+msgstr "Schaltfläche zum Importieren eines Testdatensatzes"
+
+msgid "trans_recommendation_max_elements"
+msgstr "Zahl der Elemente"
+
+msgid "trans_recommendations_max_elements_desc"
+msgstr "Zahl der Empfehlungen, die im Viewlet und in der Tile angezeigt werden soll"
+
+msgid "trans_recommendations_debug_mode"
+msgstr "Debug-Modus"
+
+msgid "trans_recommendations_debug_mode_desc"
+msgstr "Debug-Modus zur Darstellung weiterer Informationen zu den Empfehlungen innerhalb des Viewlets und der Tile"
+
+msgid "trans_save"
+msgstr "Speichern"
+
+msgid "trans_abort"
+msgstr "Abbrechen"
+
+###########################
+# Viewlet
+###########################
+
+msgid "label_title"
+msgstr "Das könnte ebenfalls interessant sein:"

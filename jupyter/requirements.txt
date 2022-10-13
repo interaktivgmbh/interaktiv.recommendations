@@ -1,0 +1,12 @@
+jupyter
+pandas
+matplotlib
+numpy
+sklearn
+scipy
+ipywidgets
+jupyterthemes
+seaborn
+spacy
+rise
+plotly

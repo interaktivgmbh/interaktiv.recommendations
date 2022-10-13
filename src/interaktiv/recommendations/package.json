@@ -1,0 +1,14 @@
+{
+  "name": "interaktiv.recommendations",
+  "version": "1.0.0",
+  "repository": "https://code.interaktiv.de/interaktiv/interaktiv.recommendations",
+  "devDependencies": {},
+  "dependencies": {},
+  "interaktiv_setup": {
+    "packages": [
+      "interaktiv.recommendations"
+    ],
+    "javascript_lib_files": [],
+    "javascript_direct_files": []
+  }
+}

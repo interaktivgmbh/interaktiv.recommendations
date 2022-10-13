@@ -1,0 +1,118 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      lang="en"
+   metal:use-macro="context/main_template/macros/master"
+   i18n:domain="interaktiv.recommendations">
+<body>
+
+<metal:content-core fill-slot="main">
+
+  <header class="recommendations-settings">
+    <a id="setup-link"
+       class="link-parent"
+       href="${portal_url}/@@overview-controlpanel" i18n:translate="" i18n:domain="zope">Configuration</a>
+    <h1 class="documentFirstHeading" i18n:translate="trans_recommendations_settings">Recommendations Settings</h1>
+    <div class="documentDescription">
+      <p i18n:translate="trans_recommendations_settings_desc">Settings to configure Recommendations</p>
+    </div>
+  </header>
+
+  <br>
+
+  <div class="field fieldset required">
+    <label class="field-caption" for="recommendations_data-field" i18n:translate="trans_recommendations_data">Recommendations
+      Data</label>
+    <p class="field-description" i18n:translate="trans_recommendations_data_desc">Shows the Recommendations data</p>
+    <input name="recommendations_data" id="recommendations_data-field" value="${python: view.get_info()}" readonly>
+  </div>
+
+  <br>
+
+  <div class="field fieldset required">
+    <label class="field-caption" for="recommendations_refresh-button" i18n:translate="trans_recommendations_refresh">Refresh
+      Recommendations</label>
+    <p class="field-description" i18n:translate="trans_recommendations_refresh_desc">Refreshes Recommendations</p>
+    <form method="POST" action="${python: context.absolute_url() + '/@@recommendations_settings'}">
+      <button name="refresh"
+              type="submit"
+              id="recommendations_refresh-button" i18n:translate="trans_recommendations_refresh_button">Refresh
+      </button>
+    </form>
+  </div>
+
+  <br>
+
+  <div class="field fieldset required">
+    <label class="field-caption" for="import_20newsgroups-button" i18n:translate="trans_recommendations_import">Import
+      20newsgroups-DataSet</label>
+    <p class="field-description" i18n:translate="trans_recommendations_import_desc">Imports dataset from 20newsgroups</p>
+    <p>
+      <a target="_blank" href="https://scikit-learn.org/stable/datasets/real_world.html#the-20-newsgroups-text-dataset">20newsgroups-Dataset</a>
+    </p>
+    <form method="POST" action="${python: context.absolute_url() + '/@@recommendations_settings'}">
+      <button name="import_20newsgroups"
+              type="submit"
+              id="import_20newsgroups-button" i18n:translate="trans_recommendations_import_button">IMPORT
+        20newsgroups-Dataset
+      </button>
+    </form>
+  </div>
+
+  <div tal:condition="python: view.info">
+    <h2>Infos</h2>
+    <ul>
+      <tal:info repeat="key python: view.info.keys()">
+        <li>
+          <b>${python: key}:</b>
+          ${python: view.info[key]}
+        </li>
+      </tal:info>
+    </ul>
+  </div>
+
+  <br>
+
+  <form method="post" enctype="multipart/form-data" id="recommendation-settings">
+    <div class="field fieldset required">
+      <label class="field-caption" for="recommendation_max_elements-field" i18n:translate="trans_recommendation_max_elements">Number
+        of Elements</label>
+      <p class="field-description" i18n:translate="trans_recommendations_max_elements_desc">Number of Recommendations displayed in the viewlet</p>
+      <select name="recommendation_max_elements"
+              id="recommendation_max_elements-field" tal:define="selected_number python: view.get_setting('recommendation_max_elements')"
+              required>
+        <tal:theme_options tal:repeat="max_elements python: (1, 2, 3, 4, 5)">
+          <option tal:attributes="selected python: max_elements == selected_number"
+            value="${python: max_elements}">${python: max_elements}</option>
+        </tal:theme_options>
+      </select>
+    </div>
+
+    <br>
+
+    <div class="field fieldset required">
+      <label class="field-caption"
+             for="recommendation_debug_mode-field" i18n:translate="trans_recommendations_debug_mode">Debug Mode</label>
+      <div>
+        <input type="checkbox" id="recommendation_debug_mode-field" name="recommendation_debug_mode"
+           tal:attributes="checked python: view.get_setting('recommendation_debug_mode')">
+        <span class="field-description" i18n:translate="trans_recommendations_debug_mode_desc">Activate the debug mode to show more details in the recommendations viewlet and tile</span>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-actions">
+      <button class="submit-widget button-field context" name="submit" type="submit" i18n:translate="trans_save">
+        Save
+      </button>
+      <a class="submit-widget button-field standalone"
+         href="${portal_url}/@@overview-controlpanel" i18n:translate="trans_abort">
+        Abort
+      </a>
+    </div>
+  </form>
+
+</metal:content-core>
+</body>
+</html>

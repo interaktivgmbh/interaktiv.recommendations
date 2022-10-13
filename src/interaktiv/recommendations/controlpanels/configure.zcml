@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="interaktiv.recommendations">
+
+    <include package="plone.restapi" />
+
+    <!-- View: Recommendations Settings -->
+    <browser:page
+        name="recommendations_settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class="interaktiv.recommendations.controlpanels.recommendations_settings.RecommendationsSettingsView"
+        permission="cmf.ManagePortal"
+        layer="interaktiv.recommendations.interfaces.IInteraktivRecommendationsLayer"
+    />
+
+    <adapter
+      factory="interaktiv.recommendations.controlpanels.recommendations_settings.RecommendationsControlpanel"
+      name="recommendations"
+    />
+
+
+</configure>

@@ -1,0 +1,47 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="interaktiv.recommendations">
+
+    <i18n:registerTranslations directory="locales"/>
+    <five:registerPackage package="." initialize=".initialize"/>
+    <include package=".behaviors" />
+    <include package=".controlpanels" />
+    <include package=".restapi" />
+    <include package=".utilities" />
+    <include package=".viewlets" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="interaktiv.recommendations"
+        directory="profiles/default"
+        description="Installs the interaktiv.recommendations package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        pre_handler="interaktiv.recommendations.setuphandlers.pre_install"
+        post_handler="interaktiv.recommendations.setuphandlers.post_install"
+    />
+
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="interaktiv.recommendations (uninstall)"
+        directory="profiles/uninstall"
+        description="Uninstalls the interaktiv.recommendations add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler="interaktiv.recommendations.setuphandlers.uninstall"
+    />
+
+    <utility
+        factory=".setuphandlers.HiddenProfiles"
+        name="interaktiv.recommendations-hiddenprofiles"
+    />
+
+    <plone:static
+        type="theme"
+        directory="static"
+        name="interaktiv.recommendations"
+    />
+
+</configure>
