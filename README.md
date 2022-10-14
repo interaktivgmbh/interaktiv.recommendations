@@ -68,13 +68,13 @@ $ yarn install
 Enable the recommendations behavior on a contenttype of your choice via controlpanel **/@@dexterity-types**.
 
 ### 2. Update recommendations index
-#### Plone classic:
+#### Plone Classic:
 Open **/@@recommendations_settings** and click on the **Refresh-Button**.
 
 #### Volto:
 Open **/controlpanel/recommendations** and click on the **Refresh-Button**.
 
-# Copyright and License
+## Copyright and License
 Author: Interaktiv GmbH - https://interaktiv.de
 
 Copyright (c) 2022, Interaktiv GmbH
