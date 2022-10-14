@@ -5,7 +5,7 @@
 Interaktiv Recommendations plone package.
 
 ## Installation
-### 1. Add recommendations to the backend
+### 1. Add the recommendations to the backend
 #### File: buildout.cfg
 ```
 [sources]
@@ -19,7 +19,7 @@ eggs =
 ```
 
 
-### 2. Add recommendations to the frontend (Volto only)
+### 2. Add the recommendations to the frontend (Volto only)
 #### File: mrs.developer.json
 ```json
 {
@@ -41,13 +41,8 @@ eggs =
 ### 3. Start "buildout" and for Volto additionally "yarn install"
 
 ## How to enable the recommendations
-
-### 1. Add recommendations behavior
-#### Add recommendations behavior (as seen below) to a contenttype of your choice via management-interface > portal_types.
-```
-interaktiv.recommendations.behaviors.recommendable.IRecommendableBehavior
-```
-
+### 1. Enable recommendations behavior
+Enable the recommendations behavior on a contenttype of your choice via controlpanel **/@@dexterity-types**.
 
 ### 2. Update recommendations index
 #### Plone classic:
