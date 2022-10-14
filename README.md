@@ -17,7 +17,7 @@ Interaktiv Recommendations plone package.
 
 
 ## Installation
-### 1. Add the recommendations to the backend
+### 1. Add the recommendations package to the backend
 #### File: buildout.cfg
 ```
 [sources]
@@ -31,7 +31,7 @@ eggs =
 ```
 
 
-### 2. Add the recommendations to the frontend (Volto only)
+### 2. Add the volto recommendations package to the frontend (Volto only)
 #### File: mrs.developer.json
 ```json
 {
