@@ -9,7 +9,7 @@ from Products.CMFPlone.CatalogTool import CatalogTool
 from Products.statusmessages.interfaces import IStatusMessage
 from numpy import matrix, ndarray
 from plone.app.contenttypes.content import Document
-from plone.app.testing import TEST_USER_ID, setRoles, FunctionalTesting
+from plone.app.testing import FunctionalTesting
 from plone.app.textfield.value import RichTextValue
 from scipy.sparse.csr import csr_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer

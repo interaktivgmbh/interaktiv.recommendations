@@ -1,6 +1,5 @@
 import unittest
 
-
 from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
 from plone.app.testing import TEST_USER_ID, setRoles
 from plone.dexterity.interfaces import IDexterityFTI

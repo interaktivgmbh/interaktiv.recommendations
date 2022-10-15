@@ -7,8 +7,7 @@
     position: relative;
 }
 
-#rise-header div.header,
-#rise-footer div.footer {
+#rise-header div.header, #rise-footer div.footer {
     font-size: 32px;
     left: 110px;
     position: absolute;
@@ -32,8 +31,7 @@ h1, h2, h3 {
     color: #1e272e;
 }
 
-.input_area,
-.output_area {
+.input_area, .output_area {
   background: white;
 }
 
@@ -42,10 +40,6 @@ h1, h2, h3 {
   border-left: 32px solid green;  
 }
 
-.slide-number-delimiter,
-.slide-number-b,
-.output_area .prompt,
-.prompt_container .input_prompt,
-#help_b {
+.slide-number-delimiter, .slide-number-b, .output_area .prompt, .prompt_container .input_prompt, #help_b {
   display: none;
 }
