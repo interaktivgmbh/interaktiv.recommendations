@@ -8,7 +8,6 @@ from interaktiv.recommendations.behaviors.recommendable import IRecommendableBeh
 from interaktiv.recommendations.interfaces import IInteraktivRecommendationsLayer
 from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_INTEGRATION_TESTING
 from plone.api.exc import InvalidParameterError
-# noinspection PyUnresolvedReferences
 from plone.app.testing import IntegrationTesting, TEST_USER_ID, setRoles
 from plone.browserlayer import utils
 from plone.dexterity.interfaces import IDexterityFTI

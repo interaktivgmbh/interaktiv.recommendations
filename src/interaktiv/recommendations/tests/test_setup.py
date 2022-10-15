@@ -5,7 +5,6 @@ from interaktiv.recommendations.behaviors.recommendable import IRecommendableBeh
 from interaktiv.recommendations.interfaces import IInteraktivRecommendationsLayer
 from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_INTEGRATION_TESTING
 from interaktiv.recommendations.tools.recommender import RecommenderTool
-# noinspection PyUnresolvedReferences
 from plone.app.testing import IntegrationTesting, TEST_USER_ID, setRoles
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.behavior.interfaces import IBehavior

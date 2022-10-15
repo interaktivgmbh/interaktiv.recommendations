@@ -1,6 +1,5 @@
 import importlib
 
-# noinspection PyUnresolvedReferences
 from plone.app.testing import FunctionalTesting, IntegrationTesting, PloneSandboxLayer, applyProfile
 from plone.protect import auto as protect_auto
 # noinspection PyUnresolvedReferences

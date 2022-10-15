@@ -4,7 +4,6 @@ from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_FUNCTI
 from interaktiv.recommendations.tests.base_test import BaseTest
 from interaktiv.recommendations.tools.recommender import RecommenderTool
 from plone.app.contenttypes.content import Document
-# noinspection PyUnresolvedReferences
 from plone.app.testing import FunctionalTesting
 
 

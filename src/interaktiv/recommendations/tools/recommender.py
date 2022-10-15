@@ -4,6 +4,8 @@ from typing import NoReturn, List, TypedDict, Literal
 
 import plone.api as api
 from AccessControl.class_init import InitializeClass
+from interaktiv.recommendations.controlpanels.recommendations_settings import RecommendationsSettingsView
+from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
 from OFS.SimpleItem import SimpleItem
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import registerToolInterface

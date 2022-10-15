@@ -18,7 +18,9 @@ VERSION = '1.0.0'
 REQUIRED = [
     'setuptools',
     'plone.app.contenttypes',
+    'plone.app.testing',
     'plone.restapi',
+    'plone.app.robotframework',
     #
     'sklearn==0.0',
     'scikit-learn==1.0.1',
