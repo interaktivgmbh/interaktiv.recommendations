@@ -2,6 +2,7 @@ import plone.api as api
 from typing import NoReturn, TypedDict, List
 from numpy import ndarray
 from pandas import DataFrame, Series
+from plone.app.contenttypes.content import Folder
 from plone.app.textfield.value import RichTextValue
 from sklearn.datasets import fetch_20newsgroups
 from zope.component import getUtility
@@ -77,7 +78,7 @@ class DataSetsUtility(object):
         return ' '.join(lines)
 
     @staticmethod
-    def _create_document(container, _id, title, text) -> NoReturn:
+    def _create_document(container: Folder, _id: str, title: str, text: str) -> NoReturn:
         document = api.content.create(
             container=container,
             type='Document',
@@ -90,7 +91,7 @@ class DataSetsUtility(object):
         document.reindexObject()
 
     @staticmethod
-    def _create_document_with_block(container, _id, title, text) -> NoReturn:
+    def _create_document_with_block(container: Folder, _id: str, title: str, text: str) -> NoReturn:
         document = api.content.create(
             container=container,
             type='Document',
