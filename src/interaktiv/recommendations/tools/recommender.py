@@ -1,12 +1,9 @@
 import os
 import time
-from typing import NoReturn, List, TypedDict, Literal
-
 import plone.api as api
+from typing import NoReturn, List, TypedDict, Literal
 from AccessControl.class_init import InitializeClass
-# from OFS.PropertyManager import PropertyManager
 from OFS.SimpleItem import SimpleItem
-# from Products.CMFCore.utils import SimpleItemWithProperties
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import registerToolInterface
 from Products.CMFPlone.CatalogTool import CatalogTool

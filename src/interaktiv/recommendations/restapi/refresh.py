@@ -20,4 +20,5 @@ class RecommendationsRefresh(Service):
 
         recommender = api.portal.get_tool('portal_recommender')
         result = recommender.refresh()
+
         return {'refreshed': result}

@@ -1,24 +1,22 @@
-from typing import Union, Optional, NoReturn, Dict, Any
-
 import json
 import plone.api as api
 import zope.schema as schema
-
+from typing import Union, Optional, NoReturn, Dict, Any
+from plone.api.exc import InvalidParameterError
+from plone.protect.interfaces import IDisableCSRFProtection
+from plone.restapi.controlpanels import RegistryConfigletPanel
 from Products.CMFPlone.Portal import PloneSite
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
-from ZPublisher.HTTPRequest import HTTPRequest
 from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
 from interaktiv.recommendations.interfaces import IInteraktivRecommendationsLayer
 from interaktiv.recommendations.utilities.datasets import get_datasets_utility
-from plone.protect.interfaces import IDisableCSRFProtection
-from plone.restapi.controlpanels import RegistryConfigletPanel
 from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import alsoProvides
 from zope.schema import SourceText
-from plone.api.exc import InvalidParameterError
+from ZPublisher.HTTPRequest import HTTPRequest
 
 
 class RecommendationsSettingsView(BrowserView):
@@ -87,7 +85,7 @@ class RecommendationsSettingsView(BrowserView):
         }
 
     @staticmethod
-    def set_settings(form_data):
+    def set_settings(form_data: Dict[str, str]) -> NoReturn:
         max_elements = form_data.get('recommendation_max_elements', 3)
         debug_mode = form_data.get('recommendation_debug_mode', False)
 

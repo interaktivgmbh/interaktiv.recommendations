@@ -1,19 +1,16 @@
 import os
 import sys
 import transaction
-
 import plone.api as api
-
 from typing import NoReturn
 
 
 class ScriptWrapper:
     """
-        Instance script for updating recommendations
-
-       Example usage:
-       bin/instance -Osite run src/interaktiv.recommendations/src/interaktiv/
-       recommendations/scripts/refresh_recommender.py
+    Instance script for updating recommendations
+    Example usage:
+    bin/instance -Osite run src/interaktiv.recommendations/src/interaktiv/
+    recommendations/scripts/refresh_recommender.py
     """
 
     @staticmethod

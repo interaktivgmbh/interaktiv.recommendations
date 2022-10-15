@@ -1,5 +1,4 @@
 from typing import TypedDict, List
-
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.restapi.deserializer import json_body
