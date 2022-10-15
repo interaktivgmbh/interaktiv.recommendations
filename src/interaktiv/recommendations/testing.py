@@ -1,10 +1,9 @@
 import importlib
 
-from plone.app.testing import FunctionalTesting
-from plone.app.testing import IntegrationTesting
-from plone.app.testing import PloneSandboxLayer
-from plone.app.testing import applyProfile
+# noinspection PyUnresolvedReferences
+from plone.app.testing import FunctionalTesting, IntegrationTesting, PloneSandboxLayer, applyProfile
 from plone.protect import auto as protect_auto
+# noinspection PyUnresolvedReferences
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 from zope.configuration import xmlconfig
 

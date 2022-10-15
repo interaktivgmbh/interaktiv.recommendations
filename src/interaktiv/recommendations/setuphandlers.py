@@ -1,5 +1,6 @@
 import plone.api as api
 from plone.dexterity.interfaces import IDexterityFTI
+# noinspection PyUnresolvedReferences
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.component import queryUtility
 from zope.interface import implementer

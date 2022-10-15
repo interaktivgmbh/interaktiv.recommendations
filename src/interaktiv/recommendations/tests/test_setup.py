@@ -1,18 +1,18 @@
 import unittest
 
 import plone.api as api
-from Products.CMFPlone.controlpanel.browser.quickinstaller import InstallerView
-from Products.CMFPlone.utils import get_installer
 from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
 from interaktiv.recommendations.interfaces import IInteraktivRecommendationsLayer
 from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_INTEGRATION_TESTING
 from interaktiv.recommendations.tools.recommender import RecommenderTool
-from plone.app.testing import IntegrationTesting
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
+# noinspection PyUnresolvedReferences
+from plone.app.testing import IntegrationTesting, TEST_USER_ID, setRoles
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.behavior.interfaces import IBehavior
 from plone.browserlayer import utils
+from Products.CMFPlone.controlpanel.browser.quickinstaller import InstallerView
+# noinspection PyUnresolvedReferences
+from Products.CMFPlone.utils import get_installer
 from zope.component import getUtility
 
 

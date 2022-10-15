@@ -1,7 +1,9 @@
 import unittest
+
+
 from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
+# noinspection PyUnresolvedReferences
+from plone.app.testing import TEST_USER_ID, setRoles
 from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import queryUtility
 

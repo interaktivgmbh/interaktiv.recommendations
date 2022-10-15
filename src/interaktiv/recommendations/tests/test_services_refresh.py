@@ -2,8 +2,9 @@ import plone.api as api
 from interaktiv.recommendations.restapi.refresh import RecommendationsRefresh
 from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_FUNCTIONAL_TESTING
 from interaktiv.recommendations.tests.base_test import BaseTest
-from plone.app.contenttypes.content import Document
 from interaktiv.recommendations.tools.recommender import RecommenderTool
+from plone.app.contenttypes.content import Document
+# noinspection PyUnresolvedReferences
 from plone.app.testing import FunctionalTesting
 
 

@@ -1,22 +1,20 @@
-import plone.api as api
 import unittest
-from Products.CMFPlone.CatalogTool import CatalogTool
-from Products.statusmessages.interfaces import IStatusMessage
+from typing import List
+
+import plone.api as api
 from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_FUNCTIONAL_TESTING
 from interaktiv.recommendations.tests.base_test import BaseTest
-from interaktiv.recommendations.tools.recommender import RecommenderTool
-from interaktiv.recommendations.tools.recommender import TRecommendation
-from numpy import matrix
-from numpy import ndarray
+from interaktiv.recommendations.tools.recommender import RecommenderTool, TRecommendation
+from Products.CMFPlone.CatalogTool import CatalogTool
+from Products.statusmessages.interfaces import IStatusMessage
+from numpy import matrix, ndarray
 from plone.app.contenttypes.content import Document
-from plone.app.testing import FunctionalTesting
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
+# noinspection PyUnresolvedReferences
+from plone.app.testing import TEST_USER_ID, setRoles, FunctionalTesting
 from plone.app.textfield.value import RichTextValue
 from scipy.sparse.csr import csr_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
-from typing import List
 
 
 class TestRecommenderTool(BaseTest):

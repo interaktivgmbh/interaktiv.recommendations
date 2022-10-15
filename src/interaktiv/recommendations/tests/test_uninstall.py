@@ -2,14 +2,14 @@ import unittest
 
 import plone.api as api
 from Products.CMFPlone.controlpanel.browser.quickinstaller import InstallerView
+# noinspection PyUnresolvedReferences
 from Products.CMFPlone.utils import get_installer
 from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
 from interaktiv.recommendations.interfaces import IInteraktivRecommendationsLayer
 from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_INTEGRATION_TESTING
 from plone.api.exc import InvalidParameterError
-from plone.app.testing import IntegrationTesting
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
+# noinspection PyUnresolvedReferences
+from plone.app.testing import IntegrationTesting, TEST_USER_ID, setRoles
 from plone.browserlayer import utils
 from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import queryUtility
