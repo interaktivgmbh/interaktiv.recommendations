@@ -1,4 +1,5 @@
 from typing import TypedDict
+
 from interaktiv.recommendations.utilities.datasets import get_datasets_utility
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.services import Service

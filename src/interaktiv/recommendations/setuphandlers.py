@@ -1,8 +1,8 @@
-from Products.CMFPlone.interfaces import INonInstallable
-from zope.interface import implementer
 import plone.api as api
-from zope.component import queryUtility
 from plone.dexterity.interfaces import IDexterityFTI
+from Products.CMFPlone.interfaces import INonInstallable
+from zope.component import queryUtility
+from zope.interface import implementer
 
 
 @implementer(INonInstallable)

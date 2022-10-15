@@ -1,5 +1,6 @@
-import plone.api as api
 from typing import NoReturn, TypedDict, List
+
+import plone.api as api
 from numpy import ndarray
 from pandas import DataFrame, Series
 from plone.app.contenttypes.content import Folder

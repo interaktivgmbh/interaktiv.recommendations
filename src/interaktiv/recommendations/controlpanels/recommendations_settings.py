@@ -1,7 +1,11 @@
 import json
+from typing import Union, Optional, NoReturn, Dict, Any
+
 import plone.api as api
 import zope.schema as schema
-from typing import Union, Optional, NoReturn, Dict, Any
+from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
+from interaktiv.recommendations.interfaces import IInteraktivRecommendationsLayer
+from interaktiv.recommendations.utilities.datasets import get_datasets_utility
 from plone.api.exc import InvalidParameterError
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.controlpanels import RegistryConfigletPanel
@@ -9,9 +13,6 @@ from Products.CMFPlone.Portal import PloneSite
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
-from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
-from interaktiv.recommendations.interfaces import IInteraktivRecommendationsLayer
-from interaktiv.recommendations.utilities.datasets import get_datasets_utility
 from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import alsoProvides

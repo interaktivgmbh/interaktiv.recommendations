@@ -1,5 +1,6 @@
-import plone.api as api
 from typing import Optional
+
+import plone.api as api
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase
 from plone.api.exc import InvalidParameterError

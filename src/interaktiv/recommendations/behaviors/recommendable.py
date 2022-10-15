@@ -1,4 +1,5 @@
 import zope.schema as schema
+
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent

@@ -1,10 +1,11 @@
 from typing import TypedDict, List
+
+from interaktiv.recommendations.controlpanels.recommendations_settings import IRecommendationSettings
+from interaktiv.recommendations.tools.recommender import TRecommendation
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
-from interaktiv.recommendations.controlpanels.recommendations_settings import IRecommendationSettings
-from interaktiv.recommendations.tools.recommender import TRecommendation
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
 

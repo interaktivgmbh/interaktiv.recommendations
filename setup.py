@@ -4,6 +4,7 @@ from os import path
 from pkg_resources import Requirement, parse_version
 from setuptools import find_packages, setup
 
+
 # Package metadata
 NAME = 'interaktiv.recommendations'
 DESCRIPTION = 'Interaktiv Recommendations product.'

@@ -1,7 +1,8 @@
+from typing import TypedDict
+
 from plone import api
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.services import Service
-from typing import TypedDict
 from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse

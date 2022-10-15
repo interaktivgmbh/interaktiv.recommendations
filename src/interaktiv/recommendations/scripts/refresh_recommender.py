@@ -1,8 +1,9 @@
 import os
 import sys
-import transaction
-import plone.api as api
 from typing import NoReturn
+
+import plone.api as api
+import transaction
 
 
 class ScriptWrapper:

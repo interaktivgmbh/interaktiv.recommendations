@@ -1,7 +1,8 @@
 import os
 import time
-import plone.api as api
 from typing import NoReturn, List, TypedDict, Literal
+
+import plone.api as api
 from AccessControl.class_init import InitializeClass
 from OFS.SimpleItem import SimpleItem
 from Products.CMFCore.utils import UniqueObject
@@ -15,8 +16,7 @@ from zope.component import queryMultiAdapter
 from zope.globalrequest import getRequest
 from zope.interface import Interface
 from zope.interface import implementer
-from interaktiv.recommendations.controlpanels.recommendations_settings import RecommendationsSettingsView
-from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
+
 
 BUILDOUT_DIR: str = os.environ.get('BUILDOUT_DIR', '')
 INSTANCE_HOME: str = '/'.join(os.environ.get('INSTANCE_HOME', '').split('/')[:-2])
