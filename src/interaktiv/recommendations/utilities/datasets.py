@@ -30,6 +30,7 @@ class DataSetsUtility(object):
 
     @staticmethod
     def get_dataframe_from_dict_like_data(data: TNewsGroupData, keys: List[str]) -> DataFrame:
+        # noinspection PyTypedDict
         processed_dict = {key: data[key] for key in keys}
 
         return DataFrame.from_dict(processed_dict)
@@ -162,6 +163,7 @@ class DataSetsUtility(object):
                     title=target_id
                 )
 
+            # noinspection PyArgumentList
             _id = chooser.chooseName(title, portal)
             if _id in container:
                 continue

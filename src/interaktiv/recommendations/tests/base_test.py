@@ -8,6 +8,7 @@ from zope.component import queryUtility
 
 class BaseTest(unittest.TestCase):
 
+    # noinspection PyUnresolvedReferences
     def setUp(self):
         super().setUp()
 

@@ -13,7 +13,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 from zope.component import queryMultiAdapter
 from zope.globalrequest import getRequest
-from zope.i18nmessageid.message import Message
 from zope.interface import Interface
 from zope.interface import implementer
 from interaktiv.recommendations.controlpanels.recommendations_settings import RecommendationsSettingsView
@@ -58,7 +57,7 @@ class RecommenderTool(UniqueObject, SimpleItem):
             self.catalog = api.portal.get_tool('portal_catalog')
 
     @staticmethod
-    def _add_status_message(msg: Message, _type: Literal['info', 'warn', 'error'] = 'info') -> NoReturn:
+    def _add_status_message(msg: str, _type: Literal['info', 'warn', 'error'] = 'info') -> NoReturn:
         api.portal.show_message(message=msg, request=getRequest(), type=_type)
 
     def get_documents(self) -> List[DexterityContent]:

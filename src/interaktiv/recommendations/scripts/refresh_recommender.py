@@ -28,4 +28,7 @@ if __name__ == "__main__":
 
     script_wrapper = ScriptWrapper()
     script_wrapper.run()
+
+    # noinspection PyUnresolvedReferences
+    # noinspection PyProtectedMember
     os._exit(0)
