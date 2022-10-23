@@ -39,13 +39,6 @@ class IRecommendationSettings(Interface):
         default=json.dumps([{'somekey': 'somevalue'}]),
     )
 
-    recommendation_configuration = SourceText(
-        title='Recommendation Configuration',
-        description='',
-        required=False,
-        default=json.dumps([{'somekey': 'somevalue'}]),
-    )
-
     recommendation_max_elements = schema.Int(
         title='Recommendations Item Count',
         description='Number of recommendations displayed in the viewlet.',
