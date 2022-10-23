@@ -1,15 +1,16 @@
 import os
 import time
-from typing import NoReturn, List, TypedDict, Literal
+from typing import NoReturn, List, TypedDict, Literal, Union, Optional, Any
 
 import plone.api as api
 from AccessControl.class_init import InitializeClass
-from interaktiv.recommendations.controlpanels.recommendations_settings import RecommendationsSettingsView
-from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
 from OFS.SimpleItem import SimpleItem
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import registerToolInterface
 from Products.CMFPlone.CatalogTool import CatalogTool
+from interaktiv.recommendations.behaviors.recommendable import IRecommendableBehavior
+from interaktiv.recommendations.controlpanels.recommendations_settings import IRecommendationSettings
+from plone.api.exc import InvalidParameterError
 from plone.dexterity.content import DexterityContent
 from plone.indexer.interfaces import IIndexer
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -18,7 +19,6 @@ from zope.component import queryMultiAdapter
 from zope.globalrequest import getRequest
 from zope.interface import Interface
 from zope.interface import implementer
-
 
 BUILDOUT_DIR: str = os.environ.get('BUILDOUT_DIR', '')
 INSTANCE_HOME: str = '/'.join(os.environ.get('INSTANCE_HOME', '').split('/')[:-2])
@@ -57,6 +57,13 @@ class RecommenderTool(UniqueObject, SimpleItem):
     def setup(self):
         if not self.catalog:
             self.catalog = api.portal.get_tool('portal_catalog')
+
+    @staticmethod
+    def get_setting(name: str) -> Optional[Union[str, Any]]:
+        try:
+            return api.portal.get_registry_record(name, interface=IRecommendationSettings)
+        except InvalidParameterError:
+            return None
 
     @staticmethod
     def _add_status_message(msg: str, _type: Literal['info', 'warn', 'error'] = 'info') -> NoReturn:
@@ -147,7 +154,7 @@ class RecommenderTool(UniqueObject, SimpleItem):
             return list()
 
         if not num:
-            num = RecommendationsSettingsView.get_setting('recommendation_max_elements')
+            num = self.get_setting('recommendation_max_elements')
 
         recommendations = list()
 

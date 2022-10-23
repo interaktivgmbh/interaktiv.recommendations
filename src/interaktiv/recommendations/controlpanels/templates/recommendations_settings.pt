@@ -6,7 +6,7 @@
    i18n:domain="interaktiv.recommendations">
 <body>
 
-<metal:content-core fill-slot="main">
+<metal:content-core fill-slot="prefs_configlet_main">
 
   <header class="recommendations-settings">
     <a id="setup-link"

@@ -24,6 +24,19 @@ msgstr "Empfehlungen Einstellungen"
 msgid "trans_recommendations_settings_desc"
 msgstr "Einstellungen zur Anpassung der Empfehlungen"
 
+msgid "trans_recommendations_tab_advanced_settings"
+msgstr "Erweiterte Einstellungen"
+
+msgid "trans_recommendations_button_save"
+msgstr "Speichern"
+
+msgid "trans_recommendations_button_cancel"
+msgstr "Abbrechen"
+
+###########################
+# Controlpanel Schema
+###########################
+
 msgid "trans_recommendations_data"
 msgstr "Empfehlungsdaten"
 

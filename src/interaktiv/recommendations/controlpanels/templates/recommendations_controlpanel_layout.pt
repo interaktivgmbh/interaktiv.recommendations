@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/@@prefs_main_template/macros/master"
+      i18n:domain="plone">
+
+<tal:styleslot metal:fill-slot="style_slot" >
+  <style>
+    button#form-buttons-import,
+    button#form-buttons-refresh {
+      display: none;
+    }
+  </style>
+</tal:styleslot>
+
+<body>
+<tal:main metal:fill-slot="prefs_configlet_main">
+  <header>
+
+    <h1 tal:content="view/label">View Title</h1>
+    <p class="lead" tal:condition="view/description | nothing" tal:content="structure view/description">View Description</p>
+
+  </header>
+
+  <div metal:use-macro="context/@@global_statusmessage/macros/portal_message">
+    Portal status message
+  </div>
+
+  <div id="content-core">
+    <div id="layout-contents">
+      <span tal:replace="structure view/contents" />
+    </div>
+  </div>
+
+</tal:main>
+</body>
+</html>

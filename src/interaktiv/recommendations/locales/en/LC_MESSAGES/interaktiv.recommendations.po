@@ -24,6 +24,19 @@ msgstr "Recommendations Settings"
 msgid "trans_recommendations_settings_desc"
 msgstr "Settings to configure Recommendations"
 
+msgid "trans_recommendations_tab_advanced_settings"
+msgstr "Advanced Settings"
+
+msgid "trans_recommendations_button_save"
+msgstr "Save"
+
+msgid "trans_recommendations_button_cancel"
+msgstr "Cancel"
+
+###########################
+# Controlpanel Schema
+###########################
+
 msgid "trans_recommendations_data"
 msgstr "Recommendations Data"
 

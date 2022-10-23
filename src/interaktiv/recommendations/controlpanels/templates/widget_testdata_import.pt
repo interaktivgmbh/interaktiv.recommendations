@@ -1,0 +1,13 @@
+<div class="field fieldset" i18n:domain="interaktiv.recommendations">
+  <label class="field-caption" for="import_20newsgroups-button" i18n:translate="trans_recommendations_import">Import
+    20newsgroups-DataSet</label>
+  <p class="field-description" i18n:translate="trans_recommendations_import_desc">Imports dataset from 20newsgroups</p>
+  <p>
+    <a target="_blank" href="https://scikit-learn.org/stable/datasets/real_world.html#the-20-newsgroups-text-dataset">20newsgroups-Dataset</a>
+  </p>
+  <button name="form.buttons.import"
+          type="submit"
+          id="form.buttons.import" i18n:translate="trans_recommendations_import_button">
+    IMPORT 20newsgroups-Dataset
+  </button>
+</div>

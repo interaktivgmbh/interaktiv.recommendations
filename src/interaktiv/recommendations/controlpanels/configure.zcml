@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="interaktiv.recommendations">
@@ -20,5 +21,34 @@
       name="recommendations"
     />
 
+    <!-- Custom Widget: TestDataImport -->
+    <class class="interaktiv.recommendations.controlpanels.widgets.TestDataImportWidget">
+      <require
+        permission="zope.Public"
+        interface="interaktiv.recommendations.controlpanels.widgets.ITestDataImportWidget"
+      />
+    </class>
+
+    <z3c:widgetTemplate
+      mode="input"
+      widget="interaktiv.recommendations.controlpanels.widgets.ITestDataImportWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="templates/widget_testdata_import.pt"
+      />
+
+    <!-- Custom Widget: Refresh -->
+    <class class="interaktiv.recommendations.controlpanels.widgets.RefreshWidget">
+      <require
+        permission="zope.Public"
+        interface="interaktiv.recommendations.controlpanels.widgets.IRefreshWidget"
+      />
+    </class>
+
+    <z3c:widgetTemplate
+      mode="input"
+      widget="interaktiv.recommendations.controlpanels.widgets.IRefreshWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="templates/widget_refresh.pt"
+      />
 
 </configure>
