@@ -34,6 +34,15 @@
   <plone:service
       method="POST"
       accept="application/json"
+      factory="interaktiv.recommendations.restapi.get.RecommenderInfo"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      permission="cmf.ManagePortal"
+      name="@recommenderinfo"
+      />
+
+  <plone:service
+      method="POST"
+      accept="application/json"
       factory="interaktiv.recommendations.restapi.import_newsgroups.ImportNewsgroups"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       permission="cmf.ManagePortal"

@@ -11,7 +11,7 @@ from zope.schema.interfaces import IField
 
 
 class ITestDataImportWidget(IWidget):
-    """A widget TestData Import"""
+    """ TestData Import Widget to Render Import Form """
 
 
 @implementer_only(ITestDataImportWidget)
@@ -35,7 +35,7 @@ def TestDataImportFieldWidget(field, request):
 
 
 class IRefreshWidget(IWidget):
-    """A widget Refresh"""
+    """ Refresh Widget to Render Refresh Form """
 
 
 @implementer_only(IRefreshWidget)
@@ -56,3 +56,32 @@ class RefreshWidget(Widget):
 @adapter(IField, IFormLayer)
 def RefreshFieldWidget(field, request):
     return FieldWidget(field, RefreshWidget(request))
+
+
+class IInfoWidget(IWidget):
+    """ Info Widget to Render Recommender Information """
+
+
+@implementer_only(IInfoWidget)
+class InfoWidget(Widget):
+    """ Info Widget to Render Recommender Information """
+
+    error = None
+    value = None
+
+    def update(self):
+        pass
+
+    def get_portal_url(self):
+        return api.portal.get().absolute_url()
+
+    @staticmethod
+    def get_recommender_info():
+        recommender = api.portal.get_tool('portal_recommender')
+        return recommender.get_recommender_info()
+
+
+@implementer(IFieldWidget)
+@adapter(IField, IFormLayer)
+def InfoFieldWidget(field, request):
+    return FieldWidget(field, InfoWidget(request))

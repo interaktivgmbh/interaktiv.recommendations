@@ -14,43 +14,60 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: interaktiv.recommendations\n"
 
-###########################
-# Controlpanel
-###########################
-
-msgid "trans_recommendations_settings"
-msgstr "Recommendations Settings"
-
-msgid "trans_recommendations_settings_desc"
-msgstr "Settings to configure Recommendations"
-
-msgid "trans_recommendations_tab_advanced_settings"
-msgstr "Advanced Settings"
-
-msgid "trans_recommendations_button_save"
-msgstr "Save"
-
-msgid "trans_recommendations_button_cancel"
-msgstr "Cancel"
-
-###########################
-# Controlpanel Schema
-###########################
-
-msgid "trans_recommendations_data"
-msgstr "Recommendations Data"
-
-msgid "trans_recommendations_data_desc"
-msgstr "Details to indexed content"
+##################################
+# Controlpanel Schema Standard Tab
+##################################
 
 msgid "trans_recommendations_refresh"
 msgstr "Refresh Recommendations"
 
 msgid "trans_recommendations_refresh_desc"
-msgstr "Button to reindex content and update Recommendations"
+msgstr "Button to reindex content and update Recommendations."
 
-msgid "trans_recommendations_refresh_button"
-msgstr "Refresh"
+msgid "trans_recommendation_max_elements"
+msgstr "Number of Elements"
+
+msgid "trans_recommendations_max_elements_desc"
+msgstr "Number of Recommendations displayed in the viewlet."
+
+##################################
+# Controlpanel Schema Info Tab
+##################################
+
+msgid "trans_recommendations_tab_info"
+msgstr "Info"
+
+##################################
+# Controlpanel Schema Advanced Tab
+##################################
+
+msgid "trans_recommendations_tab_advanced_settings"
+msgstr "Advanced Settings"
+
+msgid "trans_recommendations_debug_mode"
+msgstr "Debug Mode"
+
+msgid "trans_recommendations_debug_mode_desc"
+msgstr "Activate the debug mode to show more details in the recommendations viewlet and tile."
+
+msgid "trans_recommendations_svd_usage"
+msgstr "Use Truncated SVD for Dimensionality Reduction"
+
+msgid "trans_recommendations_svd_usage_desc"
+msgstr "Use Truncated SingularValueDecomposition for Dimensionality Reduction."
+
+msgid "trans_recommendations_svd_dimensions"
+msgstr "Number of Truncated SVD Dimensions"
+
+msgid "trans_recommendations_svd_dimensions_desc"
+msgstr "Set the number of Dimensions returned by SVD Truncation."
+
+##################################
+# Controlpanel Schema Import Tab
+##################################
+
+msgid "trans_recommendations_tab_import"
+msgstr "Import Testdata"
 
 msgid "trans_recommendations_import"
 msgstr "IMPORT 20newsgroups-Dataset"
@@ -58,27 +75,48 @@ msgstr "IMPORT 20newsgroups-Dataset"
 msgid "trans_recommendations_import_desc"
 msgstr "Button to import dataset for testing purpose"
 
-msgid "trans_recommendation_max_elements"
-msgstr "Number of Elements"
+##################################
+# Controlpanel Basic
+##################################
 
-msgid "trans_recommendations_max_elements_desc"
-msgstr "Number of Recommendations displayed in the viewlet"
+msgid "trans_recommendations_settings"
+msgstr "Recommendations Settings"
 
-msgid "trans_recommendations_debug_mode"
-msgstr "Debug Mode"
+msgid "trans_recommendations_settings_desc"
+msgstr "Settings to configure Recommendations"
 
-msgid "trans_recommendations_debug_mode_desc"
-msgstr "Activate the debug mode to show more details in the recommendations viewlet and tile"
-
-msgid "trans_save"
+msgid "trans_recommendations_button_save"
 msgstr "Save"
 
-msgid "trans_abort"
-msgstr "Abort"
+msgid "trans_recommendations_button_cancel"
+msgstr "Cancel"
 
-###########################
+##################################
+# Controlpanel Standard Tab
+##################################
+
+msgid "trans_recommendations_refresh_button"
+msgstr "Refresh"
+
+##################################
+# Controlpanel Info Tab
+##################################
+
+msgid "trans_label_recommender_info"
+msgstr "Recommender Tool Information"
+
+msgid "trans_label_recommender_info_error"
+msgstr "Error:"
+
+msgid "trans_label_recommender_info_vectors"
+msgstr "Number of Vectorized Content:"
+
+msgid "trans_label_recommender_info_dimensions"
+msgstr "Number of Dimensions:"
+
+##################################
 # Viewlet
-###########################
+##################################
 
 msgid "label_title"
 msgstr "That could also be interesting:"

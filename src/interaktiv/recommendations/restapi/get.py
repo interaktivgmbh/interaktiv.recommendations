@@ -1,4 +1,4 @@
-from typing import TypedDict, List
+from typing import TypedDict, List, Dict, Any
 
 from interaktiv.recommendations.controlpanels.recommendations_settings import IRecommendationSettings
 from interaktiv.recommendations.tools.recommender import TRecommendation
@@ -13,6 +13,10 @@ from zope.publisher.interfaces import IPublishTraverse
 class TRecommendationGetReply(TypedDict):
     recommendations: List[TRecommendation]
     debug: bool
+
+
+class TRecommenderInfoReply(TypedDict):
+    info: Dict[str, Any]
 
 
 @implementer(IPublishTraverse)
@@ -33,4 +37,14 @@ class RecommendationsGet(Service):
         return {
             'recommendations': recommender.get_recommendations(obj=self.context, num=num),
             'debug': self._is_debug_mode()
+        }
+
+
+@implementer(IPublishTraverse)
+class RecommenderInfo(Service):
+
+    def reply(self) -> TRecommenderInfoReply:
+        recommender = api.portal.get_tool('portal_recommender')
+        return {
+            'info': recommender.get_recommender_info()
         }

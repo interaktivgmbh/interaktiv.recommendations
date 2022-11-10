@@ -14,9 +14,70 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: interaktiv.recommendations\n"
 
-###########################
-# Controlpanel
-###########################
+##################################
+# Controlpanel Schema Standard Tab
+##################################
+
+msgid "trans_recommendations_refresh"
+msgstr "Empfehlungen aktualisieren"
+
+msgid "trans_recommendations_refresh_desc"
+msgstr "Schaltfläche zur Indexierung von Inhalten und Erneuerung der Empfehlungen."
+
+msgid "trans_recommendation_max_elements"
+msgstr "Zahl der Elemente"
+
+msgid "trans_recommendations_max_elements_desc"
+msgstr "Zahl der Empfehlungen, die im Viewlet und in der Tile angezeigt werden soll."
+
+##################################
+# Controlpanel Schema Info Tab
+##################################
+
+msgid "trans_recommendations_tab_info"
+msgstr "Info"
+
+##################################
+# Controlpanel Schema Advanced Tab
+##################################
+
+msgid "trans_recommendations_tab_advanced_settings"
+msgstr "Erweiterte Einstellungen"
+
+msgid "trans_recommendations_debug_mode"
+msgstr "Debug-Modus"
+
+msgid "trans_recommendations_debug_mode_desc"
+msgstr "Debug-Modus zur Darstellung weiterer Informationen zu den Empfehlungen innerhalb des Viewlets und der Tile."
+
+msgid "trans_recommendations_svd_usage"
+msgstr "Truncated SVD zur Dimensions-Reduktion verwenden"
+
+msgid "trans_recommendations_svd_usage_desc"
+msgstr "Truncated SingularValueDecomposition zur Dimensions-Reduktion verwenden."
+
+msgid "trans_recommendations_svd_dimensions"
+msgstr "Anzahl der Truncated SVD Dimensionen"
+
+msgid "trans_recommendations_svd_dimensions_desc"
+msgstr "Anzahl der Dimensionen die Truncated SVD zurückgibt setzen."
+
+##################################
+# Controlpanel Schema Import Tab
+##################################
+
+msgid "trans_recommendations_tab_import"
+msgstr "Testdaten Importieren"
+
+msgid "trans_recommendations_import"
+msgstr "20newsgroups Datensatz importieren"
+
+msgid "trans_recommendations_import_desc"
+msgstr "Schaltfläche zum Importieren eines Testdatensatzes."
+
+##################################
+# Controlpanel Basic
+##################################
 
 msgid "trans_recommendations_settings"
 msgstr "Empfehlungen Einstellungen"
@@ -24,61 +85,38 @@ msgstr "Empfehlungen Einstellungen"
 msgid "trans_recommendations_settings_desc"
 msgstr "Einstellungen zur Anpassung der Empfehlungen"
 
-msgid "trans_recommendations_tab_advanced_settings"
-msgstr "Erweiterte Einstellungen"
-
 msgid "trans_recommendations_button_save"
 msgstr "Speichern"
 
 msgid "trans_recommendations_button_cancel"
 msgstr "Abbrechen"
 
-###########################
-# Controlpanel Schema
-###########################
-
-msgid "trans_recommendations_data"
-msgstr "Empfehlungsdaten"
-
-msgid "trans_recommendations_data_desc"
-msgstr "Details zu indexierten Inhalten"
-
-msgid "trans_recommendations_refresh"
-msgstr "Empfehlungen aktualisieren"
-
-msgid "trans_recommendations_refresh_desc"
-msgstr "Schaltfläche zur Indexierung von Inhalten und Erneuerung der Empfehlungen"
+##################################
+# Controlpanel Standard Tab
+##################################
 
 msgid "trans_recommendations_refresh_button"
 msgstr "Aktualisieren"
 
-msgid "trans_recommendations_import"
-msgstr "20newsgroups Datensatz importieren"
+##################################
+# Controlpanel Info Tab
+##################################
 
-msgid "trans_recommendations_import_desc"
-msgstr "Schaltfläche zum Importieren eines Testdatensatzes"
+msgid "trans_label_recommender_info"
+msgstr "Recommender Tool Informationen"
 
-msgid "trans_recommendation_max_elements"
-msgstr "Zahl der Elemente"
+msgid "trans_label_recommender_info_error"
+msgstr "Fehler:"
 
-msgid "trans_recommendations_max_elements_desc"
-msgstr "Zahl der Empfehlungen, die im Viewlet und in der Tile angezeigt werden soll"
+msgid "trans_label_recommender_info_vectors"
+msgstr "Anzahl vectorisierter Inhalte:"
 
-msgid "trans_recommendations_debug_mode"
-msgstr "Debug-Modus"
+msgid "trans_label_recommender_info_dimensions"
+msgstr "Anzahl Vektordimensionen:"
 
-msgid "trans_recommendations_debug_mode_desc"
-msgstr "Debug-Modus zur Darstellung weiterer Informationen zu den Empfehlungen innerhalb des Viewlets und der Tile"
-
-msgid "trans_save"
-msgstr "Speichern"
-
-msgid "trans_abort"
-msgstr "Abbrechen"
-
-###########################
+##################################
 # Viewlet
-###########################
+##################################
 
 msgid "label_title"
 msgstr "Das könnte ebenfalls interessant sein:"

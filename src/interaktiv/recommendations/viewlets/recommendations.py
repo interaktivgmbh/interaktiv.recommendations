@@ -2,9 +2,9 @@ from typing import Optional
 
 import plone.api as api
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from plone.app.layout.viewlets.common import ViewletBase
-from plone.api.exc import InvalidParameterError
 from interaktiv.recommendations.controlpanels.recommendations_settings import IRecommendationSettings
+from plone.api.exc import InvalidParameterError
+from plone.app.layout.viewlets.common import ViewletBase
 
 
 class RecommendationsViewlet(ViewletBase):

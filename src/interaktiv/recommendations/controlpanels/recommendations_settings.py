@@ -21,9 +21,18 @@ from zope.schema import SourceText
 
 class IRecommendationSettings(Interface):
 
+    fieldset('info',
+        label=_('trans_recommendations_tab_info', default='Info'),
+        fields=['dummy_info']
+    )
+
     fieldset('advanced',
         label=_('trans_recommendations_tab_advanced_settings', default='Advanced Settings'),
-        fields=['recommendation_debug_mode']
+        fields=[
+            'recommendation_debug_mode',
+            'recommendation_svd_usage',
+            'recommendation_svd_dimensions'
+        ]
     )
 
     fieldset('import',
@@ -40,17 +49,51 @@ class IRecommendationSettings(Interface):
     )
 
     recommendation_max_elements = schema.Int(
-        title='Recommendations Item Count',
-        description='Number of recommendations displayed in the viewlet.',
+        title=_('trans_recommendation_max_elements', default='Recommendations Item Count'),
+        description=_(
+            'trans_recommendations_max_elements_desc',
+            default='Number of recommendations displayed in the viewlet.'
+        ),
         required=False,
         default=3
     )
 
+    directives.widget(dummy_info='interaktiv.recommendations.controlpanels.widgets.InfoFieldWidget')
+    dummy_info = SourceText(
+        title='Info',
+        description='',
+        required=False,
+        default=json.dumps([{'somekey': 'somevalue'}]),
+    )
+
     recommendation_debug_mode = schema.Bool(
-        title='Recommendations Debug Mode',
-        description='Debug mode to show more details in the recommendations viewlet and tile.',
+        title=_('trans_recommendations_debug_mode', default='Recommendations Debug Mode'),
+        description=_(
+            'trans_recommendations_debug_mode_desc',
+            default='Debug mode to show more details in the recommendations viewlet and tile.'
+        ),
         required=False,
         default=False
+    )
+
+    recommendation_svd_usage = schema.Bool(
+        title=_('trans_recommendations_svd_usage', default='Use Truncated SVD for Dimensionality Reduction'),
+        description=_(
+            'trans_recommendations_svd_usage_desc',
+            default='Use Truncated SingularValueDecomposition for Dimensionality Reduction.'
+        ),
+        required=False,
+        default=False
+    )
+
+    recommendation_svd_dimensions = schema.Int(
+        title=_('trans_recommendations_svd_dimensions', default='Number of Truncated SVD Dimensions'),
+        description=_(
+            'trans_recommendations_svd_dimensions_desc',
+            default='Set the number of Dimensions returned by SVD Truncation.'
+        ),
+        required=False,
+        default=200
     )
 
     directives.widget(dummy_import_testdata='interaktiv.recommendations.controlpanels.widgets.TestDataImportFieldWidget')

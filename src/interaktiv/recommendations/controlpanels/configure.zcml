@@ -51,4 +51,19 @@
       template="templates/widget_refresh.pt"
       />
 
+    <!-- Custom Widget: Info -->
+    <class class="interaktiv.recommendations.controlpanels.widgets.InfoWidget">
+      <require
+        permission="zope.Public"
+        interface="interaktiv.recommendations.controlpanels.widgets.IInfoWidget"
+      />
+    </class>
+
+    <z3c:widgetTemplate
+      mode="input"
+      widget="interaktiv.recommendations.controlpanels.widgets.IInfoWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="templates/widget_info.pt"
+      />
+
 </configure>

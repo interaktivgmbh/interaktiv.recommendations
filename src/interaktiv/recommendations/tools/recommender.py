@@ -13,8 +13,12 @@ from interaktiv.recommendations.controlpanels.recommendations_settings import IR
 from plone.api.exc import InvalidParameterError
 from plone.dexterity.content import DexterityContent
 from plone.indexer.interfaces import IIndexer
+from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
+from sklearn.pipeline import Pipeline
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import Normalizer
 from zope.component import queryMultiAdapter
 from zope.globalrequest import getRequest
 from zope.interface import Interface
@@ -48,7 +52,7 @@ class RecommenderTool(UniqueObject, SimpleItem):
 
     id = 'portal_recommender'
     catalog: CatalogTool = None
-    vectorizer: TfidfVectorizer = None
+    vectorizer: Union[TfidfVectorizer, Pipeline] = None
     model_knn: NearestNeighbors = None
 
     def __init__(self):
@@ -105,9 +109,20 @@ class RecommenderTool(UniqueObject, SimpleItem):
             self._add_status_message(msg, _type='error')
             return None
 
-        tfidf = TfidfVectorizer(stop_words=None)
-        tfidf.fit(text_datas)
-        self.vectorizer = tfidf
+        use_svd = self.get_setting(name='recommendation_svd_usage')
+
+        if use_svd:
+            svd_dimensions = self.get_setting(name='recommendation_svd_dimensions')
+            vectorizer = make_pipeline(
+                TfidfVectorizer(stop_words=None),
+                TruncatedSVD(n_components=svd_dimensions),
+                Normalizer(copy=False)
+            )
+        else:
+            vectorizer = TfidfVectorizer(stop_words=None)
+
+        vectorizer.fit(text_datas)
+        self.vectorizer = vectorizer
 
     def set_fitted_knn_model(self, text_datas: List[str]) -> NoReturn:
         if not self.vectorizer:
@@ -194,6 +209,19 @@ class RecommenderTool(UniqueObject, SimpleItem):
         recommendations = sorted(recommendations, key=lambda x: x['distance'])
 
         return recommendations[:num]
+
+    def get_recommender_info(self):
+        data = {
+            'error': ''
+        }
+
+        if not self.vectorizer:
+            data['error'] = 'Vectorizer not initialized'
+        else:
+            data['dimensions'] = self.model_knn.n_features_in_
+            data['vectors'] = self.model_knn.n_samples_fit_
+
+        return data
 
 
 InitializeClass(RecommenderTool)
