@@ -3,7 +3,7 @@
 
   <div tal:condition="python: info.get('error')">
     <h3 i18n:translate="trans_label_recommender_info_error">Error</h3>
-    <p>${info.get('error')}</p>
+    <p>${python: info.get('error')}</p>
   </div>
 
   <div tal:condition="not: python: info.get('error')">
