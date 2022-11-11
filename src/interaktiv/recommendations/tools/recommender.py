@@ -77,6 +77,11 @@ class RecommenderTool(UniqueObject, SimpleItem):
         query = {
             'object_provides': IRecommendableBehavior.__identifier__
         }
+
+        only_published = self.get_setting(name='recommendation_only_published')
+        if only_published:
+            query['review_state'] = 'published'
+
         return [brain.getObject() for brain in self.catalog(query)]
 
     def get_text(self, obj: DexterityContent) -> str:

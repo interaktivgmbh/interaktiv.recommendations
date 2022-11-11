@@ -1,5 +1,8 @@
 import importlib
 
+import plone.api as api
+from Products.CMFCore.WorkflowTool import WorkflowTool
+from interaktiv.recommendations.controlpanels.recommendations_settings import IRecommendationSettings
 from plone.app.testing import FunctionalTesting, IntegrationTesting, PloneSandboxLayer, applyProfile
 from plone.protect import auto as protect_auto
 # noinspection PyUnresolvedReferences
@@ -32,6 +35,12 @@ class InteraktivRecommendationsLayer(PloneSandboxLayer):
 
         # Disable CSRF system-wide
         protect_auto.CSRF_DISABLED = True
+
+        portal_workflow: WorkflowTool = api.portal.get_tool('portal_workflow')
+        portal_workflow.setChainForPortalTypes(['Document'], 'simple_publication_workflow')
+
+        # set default value for recommendation_only_published to False
+        api.portal.set_registry_record('recommendation_only_published', interface=IRecommendationSettings, value=False)
 
 
 INTERAKTIV_RECOMMENDATIONS_FIXTURE = InteraktivRecommendationsLayer()

@@ -48,6 +48,16 @@ class IRecommendationSettings(Interface):
         default=json.dumps([{'somekey': 'somevalue'}]),
     )
 
+    recommendation_only_published = schema.Bool(
+        title=_('trans_recommendations_only_published', default='Recommend only Published Content'),
+        description=_(
+            'trans_recommendations_only_published_desc',
+            default='Only Recommend Content that have the review_state "published".'
+        ),
+        required=False,
+        default=True
+    )
+
     recommendation_max_elements = schema.Int(
         title=_('trans_recommendation_max_elements', default='Recommendations Item Count'),
         description=_(

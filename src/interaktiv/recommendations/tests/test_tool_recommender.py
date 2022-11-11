@@ -1,12 +1,12 @@
-import unittest
 from typing import List
 
 import plone.api as api
+from Products.CMFPlone.CatalogTool import CatalogTool
+from Products.statusmessages.interfaces import IStatusMessage
+from interaktiv.recommendations.controlpanels.recommendations_settings import IRecommendationSettings
 from interaktiv.recommendations.testing import INTERAKTIV_RECOMMENDATIONS_FUNCTIONAL_TESTING
 from interaktiv.recommendations.tests.base_test import BaseTest
 from interaktiv.recommendations.tools.recommender import RecommenderTool, TRecommendation
-from Products.CMFPlone.CatalogTool import CatalogTool
-from Products.statusmessages.interfaces import IStatusMessage
 from numpy import matrix, ndarray
 from plone.app.contenttypes.content import Document
 from plone.app.testing import FunctionalTesting
@@ -92,6 +92,36 @@ class TestRecommenderTool(BaseTest):
 
         # cleanup
         self.portal.manage_delObjects(['document-a', 'folder-a'])
+
+    def test_recommender_get_documents_only_published(self):
+        # setup
+        document_a = api.content.create(
+            container=self.portal,
+            type='Document',
+            id='document-a'
+        )
+        api.content.create(
+            container=self.portal,
+            type='Document',
+            id='document-b'
+        )
+        api.portal.set_registry_record('recommendation_only_published', interface=IRecommendationSettings, value=True)
+
+        # precondition
+        self.assertFalse(self.recommender.get_documents())
+
+        # do it
+        api.content.transition(document_a, transition='publish')
+        result = self.recommender.get_documents()
+
+        # postcondition
+        self.assertEqual(len(result), 1)
+        self.assertIsInstance(result[0], Document)
+        self.assertEqual(result[0].id, 'document-a')
+
+        # cleanup
+        self.portal.manage_delObjects(['document-a', 'document-b'])
+        api.portal.set_registry_record('recommendation_only_published', interface=IRecommendationSettings, value=False)
 
     def test_recommender_get_text(self):
         # setup

@@ -30,6 +30,12 @@ msgstr "Number of Elements"
 msgid "trans_recommendations_max_elements_desc"
 msgstr "Number of Recommendations displayed in the viewlet."
 
+msgid "trans_recommendations_only_published"
+msgstr "Recommend only Published Content"
+
+msgid "trans_recommendations_only_published_desc"
+msgstr "Only Recommend Content that have the review_state \"published\"."
+
 ##################################
 # Controlpanel Schema Info Tab
 ##################################
