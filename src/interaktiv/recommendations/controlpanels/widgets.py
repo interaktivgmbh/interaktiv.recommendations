@@ -5,6 +5,7 @@ from z3c.form.interfaces import IWidget
 from z3c.form.widget import FieldWidget
 from z3c.form.widget import Widget
 from zope.component import adapter
+from zope.component import getMultiAdapter
 from zope.interface import implementer
 from zope.interface import implementer_only
 from zope.schema.interfaces import IField
@@ -80,6 +81,15 @@ class InfoWidget(Widget):
         recommender = api.portal.get_tool('portal_recommender')
         return recommender.get_recommender_info()
 
+    def get_last_refresh(self) -> str:
+        recommender = api.portal.get_tool('portal_recommender')
+
+        last_refresh = recommender.get_setting('last_refresh')
+        if not last_refresh:
+            return str()
+
+        plone = getMultiAdapter((self.context, self.request), name="plone")
+        return plone.toLocalizedTime(last_refresh)
 
 @implementer(IFieldWidget)
 @adapter(IField, IFormLayer)

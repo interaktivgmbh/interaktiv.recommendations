@@ -114,6 +114,13 @@ class IRecommendationSettings(Interface):
         default=json.dumps([{'somekey': 'somevalue'}]),
     )
 
+    directives.mode(last_refresh='hidden')
+    last_refresh = schema.Datetime(
+        title=_('trans_recommendations_last_refresh', default='Last Refresh Date'),
+        description='',
+        required=False
+    )
+
 class RecommendationsSettingsForm(RegistryEditForm):
     schema = IRecommendationSettings
     label = _('trans_recommendations_settings', default='Interaktiv Recommendations Settings')

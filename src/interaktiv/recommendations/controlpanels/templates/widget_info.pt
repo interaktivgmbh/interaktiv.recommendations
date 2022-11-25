@@ -7,6 +7,13 @@
   </div>
 
   <div tal:condition="not: python: info.get('error')">
+
+    <p>
+      <label i18n:translate="trans_label_recommender_info_last_refresh">Last Refresh:</label>
+      ${python: view.get_last_refresh()}
+    </p>
+
+
     <p>
       <label i18n:translate="trans_label_recommender_info_vectors">Number of Vectorized Content:</label>
       ${python: info.get('vectors')}

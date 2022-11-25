@@ -1,5 +1,6 @@
 import os
 import time
+from datetime import datetime
 from typing import NoReturn, List, TypedDict, Literal, Union, Optional, Any
 
 import plone.api as api
@@ -141,6 +142,11 @@ class RecommenderTool(UniqueObject, SimpleItem):
         model_knn.fit(recommendation_matrix)
         self.model_knn = model_knn
 
+    @staticmethod
+    def set_last_refresh() -> NoReturn:
+        today = datetime.now()
+        api.portal.set_registry_record('last_refresh', interface=IRecommendationSettings, value=today)
+
     def refresh(self) -> bool:
         start = time.time()
 
@@ -161,6 +167,7 @@ class RecommenderTool(UniqueObject, SimpleItem):
             msg = f'Failed Refreshing Recommender.'
             self._add_status_message(msg, _type='info')
 
+        self.set_last_refresh()
         return False
 
     # TODO Split this into more Methods

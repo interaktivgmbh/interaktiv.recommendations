@@ -14,6 +14,7 @@ from plone.app.textfield.value import RichTextValue
 from scipy.sparse.csr import csr_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
+from datetime import datetime
 
 
 class TestRecommenderTool(BaseTest):
@@ -292,6 +293,19 @@ class TestRecommenderTool(BaseTest):
 
         # cleanup
         self._remove_test_documents()
+
+    def test_recommender_refresh__updates_last_refresh(self):
+        # setup
+        api.portal.set_registry_record('last_refresh', interface=IRecommendationSettings, value=None)
+
+        # do it
+        self.recommender.refresh()
+
+        # post condition
+        last_refresh = api.portal.get_registry_record('last_refresh', interface=IRecommendationSettings)
+        self.assertIsInstance(last_refresh, datetime)
+        today = datetime.now()
+        self.assertEqual(last_refresh.date(), today.date())
 
     def test_recommender_get_recommendations__not_refreshed_no_documents(self):
         # setup
