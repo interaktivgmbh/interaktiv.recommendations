@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+    <genericsetup:upgradeStep
+        source="0001"
+        destination="0002"
+        title="Add last_refresh to registry records"
+        description="Add last_refresh registry records"
+        profile="interaktiv.recommendations:default"
+        handler=".v0001_to_v0002.upgrade"
+    />
+
+</configure>
