@@ -25,10 +25,12 @@ class TestDataImportWidget(Widget):
     def update(self):
         pass
 
-    def get_portal_url(self):
+    @staticmethod
+    def get_portal_url():
         return api.portal.get().absolute_url()
 
 
+# noinspection PyPep8Naming
 @implementer(IFieldWidget)
 @adapter(IField, IFormLayer)
 def TestDataImportFieldWidget(field, request):
@@ -49,10 +51,12 @@ class RefreshWidget(Widget):
     def update(self):
         pass
 
-    def get_portal_url(self):
+    @staticmethod
+    def get_portal_url():
         return api.portal.get().absolute_url()
 
 
+# noinspection PyPep8Naming
 @implementer(IFieldWidget)
 @adapter(IField, IFormLayer)
 def RefreshFieldWidget(field, request):
@@ -73,7 +77,8 @@ class InfoWidget(Widget):
     def update(self):
         pass
 
-    def get_portal_url(self):
+    @staticmethod
+    def get_portal_url():
         return api.portal.get().absolute_url()
 
     @staticmethod
@@ -91,6 +96,8 @@ class InfoWidget(Widget):
         plone = getMultiAdapter((self.context, self.request), name="plone")
         return plone.toLocalizedTime(last_refresh)
 
+
+# noinspection PyPep8Naming
 @implementer(IFieldWidget)
 @adapter(IField, IFormLayer)
 def InfoFieldWidget(field, request):
