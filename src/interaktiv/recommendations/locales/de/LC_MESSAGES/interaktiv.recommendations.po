@@ -118,7 +118,7 @@ msgid "trans_label_recommender_info_error"
 msgstr "Fehler:"
 
 msgid "trans_label_recommender_info_vectors"
-msgstr "Anzahl vectorisierter Inhalte:"
+msgstr "Anzahl vektorisierter Inhalte:"
 
 msgid "trans_label_recommender_info_dimensions"
 msgstr "Anzahl Vektordimensionen:"

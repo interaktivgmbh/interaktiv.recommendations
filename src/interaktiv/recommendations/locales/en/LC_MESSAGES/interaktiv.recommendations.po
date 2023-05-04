@@ -118,10 +118,10 @@ msgid "trans_label_recommender_info_error"
 msgstr "Error:"
 
 msgid "trans_label_recommender_info_vectors"
-msgstr "Number of Vectorized Content:"
+msgstr "Number of vectorized content:"
 
 msgid "trans_label_recommender_info_dimensions"
-msgstr "Number of Dimensions:"
+msgstr "Number of dimensions:"
 
 ##################################
 # Viewlet
