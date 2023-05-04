@@ -44,7 +44,7 @@ msgid "trans_recommendations_tab_info"
 msgstr "Info"
 
 msgid "trans_label_recommender_info_last_refresh"
-msgstr "Letzte Aktualisierung at:"
+msgstr "Letzte Aktualisierung am:"
 
 ##################################
 # Controlpanel Schema Advanced Tab
