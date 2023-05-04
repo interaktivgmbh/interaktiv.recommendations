@@ -161,7 +161,7 @@ class RecommenderTool(UniqueObject, SimpleItem):
         if self.vectorizer and self.model_knn:
             time_passed = end - start
             msg = f'Recommender Successfully Refreshed in {time_passed} seconds.'
-            self._add_status_message(msg, _type='info')
+            self._add_status_message(msg)
             self.set_last_refresh()
             return True
 
