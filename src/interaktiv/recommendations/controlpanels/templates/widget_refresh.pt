@@ -4,6 +4,7 @@
   <p class="field-description" i18n:translate="trans_recommendations_refresh_desc">Refreshes Recommendations</p>
   <button name="form.buttons.refresh"
           type="submit"
+          class="btn btn-primary"
           id="recommendations_refresh-button" i18n:translate="trans_recommendations_refresh_button">Refresh
   </button>
 </div>
