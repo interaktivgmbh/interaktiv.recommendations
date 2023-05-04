@@ -296,7 +296,10 @@ class TestRecommenderTool(BaseTest):
 
     def test_recommender_refresh__updates_last_refresh(self):
         # setup
-        api.portal.set_registry_record('last_refresh', interface=IRecommendationSettings, value=None)
+        self._create_test_documents()
+
+        old_date = datetime(2011, 11, 11)
+        api.portal.set_registry_record('last_refresh', interface=IRecommendationSettings, value=old_date)
 
         # do it
         self.recommender.refresh()

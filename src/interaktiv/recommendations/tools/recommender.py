@@ -222,6 +222,14 @@ class RecommenderTool(UniqueObject, SimpleItem):
 
         return recommendations[:num]
 
+    def get_last_refresh(self) -> str:
+        last_refresh = self.get_setting('last_refresh')
+        if not last_refresh:
+            return str()
+
+        portal = api.portal.get()
+        return portal.toLocalizedTime(last_refresh)
+
     def get_recommender_info(self):
         data = {
             'error': ''
@@ -232,6 +240,8 @@ class RecommenderTool(UniqueObject, SimpleItem):
         else:
             data['dimensions'] = self.model_knn.n_features_in_
             data['vectors'] = self.model_knn.n_samples_fit_
+
+        data['last_refresh'] = self.get_last_refresh()
 
         return data
 

@@ -10,7 +10,7 @@
 
     <p>
       <label i18n:translate="trans_label_recommender_info_last_refresh">Last refresh at:</label>
-      ${python: view.get_last_refresh()}
+      ${python: info.get('last_refresh')}
     </p>
 
 
