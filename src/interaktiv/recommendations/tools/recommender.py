@@ -164,20 +164,20 @@ class RecommenderTool(UniqueObject, SimpleItem):
             self._add_status_message(msg, _type='info')
             self.set_last_refresh()
             return True
-        else:
-            msg = f'Failed Refreshing Recommender.'
-            self._add_status_message(msg, _type='info')
 
+        msg = f'Failed Refreshing Recommender.'
+        self._add_status_message(msg)
         return False
 
     # TODO Split this into more Methods
-    def get_recommendations(self, obj: DexterityContent, num: int = None, max_distance: float = 1.0
-                            ) -> List[TRecommendation]:
+    def get_recommendations(
+            self,
+            obj: DexterityContent,
+            num: int = None,
+            max_distance: float = 1.0
+    ) -> List[TRecommendation]:
 
-        if not self.vectorizer:
-            return list()
-
-        if not self.model_knn:
+        if not self.vectorizer or not self.model_knn:
             return list()
 
         if not num:
