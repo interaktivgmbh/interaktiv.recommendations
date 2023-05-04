@@ -43,6 +43,9 @@ msgstr "Only Recommend Content that have the review_state \"published\"."
 msgid "trans_recommendations_tab_info"
 msgstr "Info"
 
+msgid "trans_label_recommender_info_last_refresh"
+msgstr "Last refresh on:"
+
 ##################################
 # Controlpanel Schema Advanced Tab
 ##################################

@@ -121,6 +121,7 @@ class IRecommendationSettings(Interface):
         required=False
     )
 
+
 class RecommendationsSettingsForm(RegistryEditForm):
     schema = IRecommendationSettings
     label = _('trans_recommendations_settings', default='Interaktiv Recommendations Settings')

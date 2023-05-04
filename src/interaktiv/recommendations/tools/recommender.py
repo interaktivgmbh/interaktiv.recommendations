@@ -162,12 +162,12 @@ class RecommenderTool(UniqueObject, SimpleItem):
             time_passed = end - start
             msg = f'Recommender Successfully Refreshed in {time_passed} seconds.'
             self._add_status_message(msg, _type='info')
+            self.set_last_refresh()
             return True
         else:
             msg = f'Failed Refreshing Recommender.'
             self._add_status_message(msg, _type='info')
 
-        self.set_last_refresh()
         return False
 
     # TODO Split this into more Methods

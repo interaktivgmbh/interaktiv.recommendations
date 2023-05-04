@@ -9,7 +9,7 @@
   <div tal:condition="not: python: info.get('error')">
 
     <p>
-      <label i18n:translate="trans_label_recommender_info_last_refresh">Last Refresh:</label>
+      <label i18n:translate="trans_label_recommender_info_last_refresh">Last refresh at:</label>
       ${python: view.get_last_refresh()}
     </p>
 
