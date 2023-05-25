@@ -11,4 +11,13 @@
         handler=".v0001_to_v0002.upgrade"
     />
 
+    <genericsetup:upgradeStep
+        source="0002"
+        destination="0003"
+        title="Update registry records"
+        description="Update registry records"
+        profile="interaktiv.recommendations:default"
+        handler=".v0002_to_v0003.upgrade"
+    />
+
 </configure>
