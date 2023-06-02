@@ -15,11 +15,11 @@
 
 
     <p>
-      <label i18n:translate="trans_label_recommender_info_vectors">Number of Vectorized Content:</label>
+      <label i18n:translate="trans_label_recommender_info_vectors">Number of vectorized content:</label>
       ${python: info.get('vectors')}
     </p>
     <p>
-      <label i18n:translate="trans_label_recommender_info_dimensions">Number of Dimensions:</label>
+      <label i18n:translate="trans_label_recommender_info_dimensions">Number of dimensions:</label>
       ${python: info.get('dimensions')}
     </p>
   </div>
