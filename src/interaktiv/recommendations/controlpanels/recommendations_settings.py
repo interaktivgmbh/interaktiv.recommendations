@@ -22,23 +22,23 @@ from zope.schema import SourceText
 class IRecommendationSettings(Interface):
 
     fieldset('info',
-        label=_('trans_recommendations_tab_info', default='Info'),
-        fields=['dummy_info']
-    )
+             label=_('trans_recommendations_tab_info', default='Info'),
+             fields=['dummy_info']
+             )
 
     fieldset('advanced',
-        label=_('trans_recommendations_tab_advanced_settings', default='Advanced Settings'),
-        fields=[
-            'recommendation_debug_mode',
-            'recommendation_svd_usage',
-            'recommendation_svd_dimensions'
-        ]
-    )
+             label=_('trans_recommendations_tab_advanced_settings', default='Advanced Settings'),
+             fields=[
+                 'recommendation_debug_mode',
+                 'recommendation_svd_usage',
+                 'recommendation_svd_dimensions'
+             ]
+             )
 
     fieldset('import',
-        label=_('trans_recommendations_tab_import', default='Import Testdata'),
-        fields=['dummy_import_testdata']
-    )
+             label=_('trans_recommendations_tab_import', default='Import Testdata'),
+             fields=['dummy_import_testdata']
+             )
 
     directives.widget(dummy_refresh='interaktiv.recommendations.controlpanels.widgets.RefreshFieldWidget')
     dummy_refresh = SourceText(
@@ -106,7 +106,8 @@ class IRecommendationSettings(Interface):
         default=200
     )
 
-    directives.widget(dummy_import_testdata='interaktiv.recommendations.controlpanels.widgets.TestDataImportFieldWidget')
+    directives.widget(
+        dummy_import_testdata='interaktiv.recommendations.controlpanels.widgets.TestDataImportFieldWidget')
     dummy_import_testdata = SourceText(
         title='Import TestData',
         description='',
@@ -127,6 +128,7 @@ class RecommendationsSettingsForm(RegistryEditForm):
     label = _('trans_recommendations_settings', default='Interaktiv Recommendations Settings')
     description = _('trans_recommendations_settings_desc', default='Settings to configure Recommendations')
 
+    # noinspection PyUnreachableCode
     @staticmethod
     def import_20newsgroups_dataset() -> NoReturn:
         datasets_utility = get_datasets_utility()
@@ -140,10 +142,12 @@ class RecommendationsSettingsForm(RegistryEditForm):
         catalog.manage_reindexIndex(ids=['object_provides'])
         recommender.refresh()
 
+    # noinspection PyUnusedLocal,PyPep8Naming
     @button.buttonAndHandler(_('label_import'), name='import')
     def handleImport(self, action):
         self.import_20newsgroups_dataset()
 
+    # noinspection PyUnusedLocal,PyPep8Naming
     @button.buttonAndHandler(_('label_refresh'), name='refresh')
     def handleRefresh(self, action):
         self.refresh()
