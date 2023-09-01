@@ -1,0 +1,6 @@
+graft src/interaktiv
+graft jupyter
+include *.md
+include *.py
+exclude .gitignore
+exclude *.txt
