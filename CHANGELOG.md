@@ -1,4 +1,4 @@
-## 1.0.1 (unreleased)
+## 1.0.1 (2023-09-07)
 
 
 - Nothing changed yet.
