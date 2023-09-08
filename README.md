@@ -69,6 +69,6 @@ Open **/controlpanel/recommendations** and click on the **Refresh-Button**.
 ## Copyright and License
 Author: Interaktiv GmbH - https://interaktiv.de
 
-Copyright (c) 2022, Interaktiv GmbH
+Copyright (c) 2023, Interaktiv GmbH
 
 See LICENSE.md for details.

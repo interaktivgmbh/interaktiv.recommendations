@@ -2,7 +2,7 @@
 ## 1.0.2 (unreleased)
 
 
-- Nothing changed yet.
+- Updated README.md [@braun](https://github.com/richardbenedikt)
 
 
 ## 1.0.1 (2023-09-08)
