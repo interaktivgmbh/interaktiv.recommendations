@@ -1,4 +1,4 @@
-## 1.0.1 (unreleased)
+## 1.0.2 (2023-09-08)
 
 ### Changed
 - Updated README.md [@braun](https://github.com/richardbenedikt)
