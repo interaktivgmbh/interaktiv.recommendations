@@ -12,7 +12,7 @@ URL = 'https://code.interaktiv.de/interaktiv/interaktiv.recommendations'
 EMAIL = 'support@interaktiv.de'
 AUTHOR = 'Interaktiv'
 REQUIRES_PYTHON = '~=3.8'
-VERSION = '1.0.1'
+VERSION = '1.0.2.DEV0'
 
 # Additional package requires
 REQUIRED = [
