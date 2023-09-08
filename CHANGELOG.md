@@ -1,5 +1,5 @@
 ### Changed
-## 1.0.2 (unreleased)
+## 1.0.2 (2023-09-08)
 
 
 - Updated README.md [@braun](https://github.com/richardbenedikt)
