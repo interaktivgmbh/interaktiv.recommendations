@@ -46,7 +46,7 @@ eggs =
 #### File: package.json
 ```json
   "addons": [
-    "@interaktiv/volto-recommendations"
+    "@interaktivgmbh/volto-recommendations"
   ]
 ```
 
