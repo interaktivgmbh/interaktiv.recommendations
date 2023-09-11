@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2022, Interaktiv GmbH
+Copyright (c) 2023, Interaktiv GmbH
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

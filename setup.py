@@ -75,7 +75,7 @@ setup(
     author=AUTHOR,
     author_email=EMAIL,
     url=URL,
-    license='proprietary',
+    license='BSD License (BSD)',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     namespace_packages=['interaktiv', ],

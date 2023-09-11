@@ -2,7 +2,7 @@
 ## 1.0.3 (unreleased)
 
 
-- Nothing changed yet.
+- Updated software license [@braun](https://github.com/richardbenedikt)
 
 
 ## 1.0.2 (2023-09-08)
