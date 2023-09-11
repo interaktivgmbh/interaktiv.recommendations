@@ -1,5 +1,5 @@
 ### Changed
-## 1.0.3 (unreleased)
+## 1.0.3 (2023-09-11)
 
 
 - Updated software license [@braun](https://github.com/richardbenedikt)
